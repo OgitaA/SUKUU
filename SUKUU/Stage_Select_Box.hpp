@@ -4,6 +4,12 @@ class Stage_Select_Box {
 
 public:
 
+	Stage_Select_Box(int _number,String _name) {
+
+		number = _number;
+		name = _name;
+	}
+
 	int get_number() { return number; }
 	String get_name() { return name; }
 

@@ -27,11 +27,14 @@ void Game::set_data() {
 
 void Game::set_stage_select_box() {
 
-
+	make_stage_select_box(1, U"すくえ！都市ゴミ！！");
+	make_stage_select_box(2, U"すくえ！海洋ゴミ！！");
+	make_stage_select_box(3, U"すくえ！宇宙ゴミ！！");
 }
 
-void Game::make_stage_select_box() {
+void Game::make_stage_select_box(int v,String name) {
 
+	stage_select_box.push_back(Stage_Select_Box(v,name));
 }
 
 void Game::load_image() {

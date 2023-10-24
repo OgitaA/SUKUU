@@ -26,7 +26,7 @@ public:
 	void set_screen();
 	void set_data();
 	void set_stage_select_box();
-	void make_stage_select_box();
+	void make_stage_select_box(int,String);
 	void load_image();
 	void load_music();
 	void load_font();

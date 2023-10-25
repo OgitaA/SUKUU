@@ -141,6 +141,28 @@ void Game::load_image() {
 
 	TextureAsset::Register(U"stage_select_box", U"image/stage_select/box.png");
 	TextureAsset::Load(U"stage_select_box");
+
+	TextureAsset::Register(U"stage_select_box_1", U"image/stage_select/box_1.png");
+	TextureAsset::Load(U"stage_select_box_1");
+
+	for (int i = 0; i < 3; i++) {
+
+		String name = U"stage_select_box_" + Format(i + 1);
+		String adress = U"image/stage_select/box_" + Format(i + 1) + U".png";
+
+		TextureAsset::Register(name, adress);
+		TextureAsset::Load(name);
+	}
+
+	
+
+	TextureAsset::Register(U"stage_select_cur", U"image/stage_select/cur.png");
+	TextureAsset::Load(U"stage_select_cur");
+
+	TextureAsset::Register(U"stage_select_doctor", U"image/stage_select/doctor.png");
+	TextureAsset::Load(U"stage_select_doctor");
+
+
 }
 
 void Game::load_music() {
@@ -172,13 +194,19 @@ void Game::load_music() {
 
 void Game::load_font() {
 
+	FontAsset::Register(U"UDP_G_B_40", 40, U"font/BIZUDPGothic-Bold.ttf");
+
 	FontAsset::Register(U"UD_G_B_60", 60, U"font/BIZUDGothic-Bold.ttf");
 	FontAsset::Register(U"UD_G_R_60", 60, U"font/BIZUDGothic-Regular.ttf");
 
 	FontAsset::Register(U"UDP_G_B_100", 100, U"font/BIZUDPGothic-Bold.ttf");
 	FontAsset::Register(U"UDP_G_R_60", 60, U"font/BIZUDPGothic-Regular.ttf");
 
+	FontAsset::Register(U"UDP_G_B_70", 70, U"font/BIZUDPGothic-Bold.ttf");
+
 	FontAsset::Register(U"KIKA_R_30", 30, U"font/Kikakana-21-Bold.otf");
+
+
 }
 
 void Game::debug_data() {

@@ -34,6 +34,7 @@ public:
 
 	//Common
 	int stage = 1;
+	int clear_stage = 0;
 
 	//Change_Scene
 	bool change_scene_process = false;
@@ -46,6 +47,7 @@ public:
 	void change_scene(int);
 	void change_scene_title();
 	void change_scene_battle();
+	void change_scene_stage_select();
 
 	void update_change_scene();
 	void draw_change_scene();;
@@ -149,6 +151,10 @@ public:
 	void draw_title();
 
 	//Stage_Select
+
+	int stage_select_cur = 0;
+	double stage_select_cur_interval = 0;
+
 	void update_stage_select();
 	void draw_stage_select();
 	Array<Stage_Select_Box> stage_select_box;

@@ -90,3 +90,8 @@ void Game::change_scene_battle() {
 
 	change_scene(0);
 }
+
+void Game::change_scene_stage_select() {
+
+	change_scene(1);
+}

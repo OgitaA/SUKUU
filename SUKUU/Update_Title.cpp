@@ -2,6 +2,8 @@
 
 void Game::update_title() {
 
+	/*
+
 	double d_time = Scene::DeltaTime();
 
 	//キーインターバル
@@ -62,7 +64,11 @@ void Game::update_title() {
 		}
 
 	}
+*/
 
+	if (KeyZ.down()) {
+		change_scene_stage_select();
+	}
 }
 
 

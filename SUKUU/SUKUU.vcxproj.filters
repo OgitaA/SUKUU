@@ -202,6 +202,12 @@
     <Filter Include="Source Files\Game\Stage_Select\Stage_Select_Box">
       <UniqueIdentifier>{bcde85cd-4fc6-400e-b2e3-4ebde64708c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game\Common">
+      <UniqueIdentifier>{f8403a16-6e3f-4a61-8bb9-79855b15d200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Battle\Object\Emerge_Item">
+      <UniqueIdentifier>{c2964165-003d-4da0-b3ad-0b305e69f33a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -284,6 +290,9 @@
     </ClCompile>
     <ClCompile Include="Draw_Stage_Select.cpp">
       <Filter>Source Files\Game\Stage_Select</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>Source Files\Game\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -949,6 +958,9 @@
     </ClInclude>
     <ClInclude Include="Stage_Select_Box.hpp">
       <Filter>Source Files\Game\Stage_Select\Stage_Select_Box</Filter>
+    </ClInclude>
+    <ClInclude Include="Emerge_Item.hpp">
+      <Filter>Source Files\Game\Battle\Object\Emerge_Item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

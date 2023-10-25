@@ -118,6 +118,7 @@
     <ClCompile Include="Back.cpp" />
     <ClCompile Include="Back_Object.cpp" />
     <ClCompile Include="Change_Scene.cpp" />
+    <ClCompile Include="Common.cpp" />
     <ClCompile Include="Draw_Battle.cpp" />
     <ClCompile Include="Draw_Game.cpp" />
     <ClCompile Include="Draw_Gameover.cpp" />
@@ -344,6 +345,7 @@
     <ClInclude Include="Back_Object.hpp" />
     <ClInclude Include="Back_Object_Data.hpp" />
     <ClInclude Include="Emerge_Enemy.hpp" />
+    <ClInclude Include="Emerge_Item.hpp" />
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="Enemy_Bullet.hpp" />
     <ClInclude Include="Game.hpp" />

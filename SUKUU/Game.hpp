@@ -10,6 +10,7 @@
 #include"Back_Object_Data.hpp"
 #include"Back_Object.hpp"
 #include"Stage_Select_Box.hpp"
+#include"Emerge_Item.hpp"
 
 class Game {
 
@@ -34,7 +35,9 @@ public:
 
 	//Common
 	int stage = 1;
-	int clear_stage = 0;
+	int clear_stage = 3;
+
+	void draw_indention(Font,String,int,int,int);
 
 	//Change_Scene
 	bool change_scene_process = false;
@@ -68,6 +71,7 @@ public:
 	Array<Emerge_Enemy> emerge_enemy;
 	Array<Enemy> enemy;
 	Array<Enemy_Bullet> enemy_bullet;
+	Array<Emerge_Item> emerge_item;
 	Array<Item> item;
 	Back back;
 	Array<Back_Object_Data> back_object_data;

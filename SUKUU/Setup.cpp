@@ -162,6 +162,9 @@ void Game::load_image() {
 	TextureAsset::Register(U"stage_select_doctor", U"image/stage_select/doctor.png");
 	TextureAsset::Load(U"stage_select_doctor");
 
+	TextureAsset::Register(U"stage_select_tips", U"image/stage_select/tips.png");
+	TextureAsset::Load(U"stage_select_tips");
+
 
 }
 
@@ -194,6 +197,7 @@ void Game::load_music() {
 
 void Game::load_font() {
 
+	FontAsset::Register(U"UDP_G_R_25", 25, U"font/BIZUDPGothic-Regular.ttf");
 	FontAsset::Register(U"UDP_G_B_40", 40, U"font/BIZUDPGothic-Bold.ttf");
 
 	FontAsset::Register(U"UD_G_B_60", 60, U"font/BIZUDGothic-Bold.ttf");
@@ -203,6 +207,8 @@ void Game::load_font() {
 	FontAsset::Register(U"UDP_G_R_60", 60, U"font/BIZUDPGothic-Regular.ttf");
 
 	FontAsset::Register(U"UDP_G_B_70", 70, U"font/BIZUDPGothic-Bold.ttf");
+
+
 
 	FontAsset::Register(U"KIKA_R_30", 30, U"font/Kikakana-21-Bold.otf");
 

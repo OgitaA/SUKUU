@@ -42,7 +42,7 @@ void Game::make_stage(int _stage) {
 void Game::load_enemy_data(int _stage) {
 
 
-	String adress = U"data/" + Format(_stage) + U"/enemy.csv";
+	String adress = U"data/" + Format(_stage) + U"/stage.csv";
 
 	const CSV csv{ adress };
 	if (!csv) {
@@ -52,6 +52,8 @@ void Game::load_enemy_data(int _stage) {
 
 	//縦
 	for (size_t row = 0; row < csv.rows() - 1; row++) {
+
+		String enemy_or_item;
 
 		double stage_time = 0;
 		String name;
@@ -64,41 +66,80 @@ void Game::load_enemy_data(int _stage) {
 
 		int cell_y = row + 1;
 
-		//横
-		for (int x = 0; x < 8; x++) {
 
-			switch (x)
-			{
-			case 0:
-				stage_time = Parse<double>(csv[cell_y][x]);
-				break;
-			case 1:
-				name = Parse<String>(csv[cell_y][x]);
-				break;
-			case 2:
-				pattern = Parse<String>(csv[cell_y][x]);
-				break;
-			case 3:
-				pos_x = Parse<int>(csv[cell_y][x]);
-				break;
-			case 4:
-				pos_y = Parse<int>(csv[cell_y][x]);
-				break;
-			case 5:
-				hp = Parse<int>(csv[cell_y][x]);
-				break;
-			case 6:
-				score = Parse<int>(csv[cell_y][x]);
-				break;
-			case 7:
-				item = Parse<int>(csv[cell_y][x]);
-				break;
+		enemy_or_item = Parse<String>(csv[cell_y][0]);
+
+		//Enemy
+		if (enemy_or_item==U"E") {
+
+			//横
+			for (int x = 0; x < 9; x++) {
+
+				switch (x)
+				{
+				case 1:
+					stage_time = Parse<double>(csv[cell_y][x]);
+					break;
+				case 2:
+					name = Parse<String>(csv[cell_y][x]);
+					break;
+				case 3:
+					pattern = Parse<String>(csv[cell_y][x]);
+					break;
+				case 4:
+					pos_x = Parse<int>(csv[cell_y][x]);
+					break;
+				case 5:
+					pos_y = Parse<int>(csv[cell_y][x]);
+					break;
+				case 6:
+					hp = Parse<int>(csv[cell_y][x]);
+					break;
+				case 7:
+					score = Parse<int>(csv[cell_y][x]);
+					break;
+				case 8:
+					item = Parse<int>(csv[cell_y][x]);
+					break;
+
+				}
 
 			}
 
+			emerge_enemy.push_back(Emerge_Enemy(stage_time, name, pattern, pos_x, pos_y, hp, score, item));
+
+
 		}
 
-		emerge_enemy.push_back(Emerge_Enemy(stage_time, name, pattern, pos_x, pos_y, hp, score, item));
+		//Item
+		else if (enemy_or_item == U"I") {
+
+			for (int x = 0; x < 6; x++) {
+
+				switch (x)
+				{
+				case 1:
+					stage_time = Parse<double>(csv[cell_y][x]);
+					break;
+				case 2:
+					name =  Parse<String>(csv[cell_y][x]);
+					break;
+				case 4:
+					pos_x = Parse<int>(csv[cell_y][x]);
+					break;
+				case 5:
+					pos_y = Parse<int>(csv[cell_y][x]);
+				default:
+					break;
+				}
+			}
+
+			emerge_item.push_back(Emerge_Item(stage_time, name, pos_x, pos_y));
+
+		}
+
+        
+
 	}
 
 }

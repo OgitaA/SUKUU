@@ -9,6 +9,9 @@ void Game::update_battle() {
 	//敵生成
 	make_enemy();
 
+	//アイテム生成
+	make_item();
+
 	//プレイヤー更新
 	player.update(d_time);
 
@@ -19,7 +22,7 @@ void Game::update_battle() {
 	update_item(d_time);
 
 	//プレイヤーvsアイテム
-	player_vs_item();
+	player_netvs_item();
 
 	//アイテム削除
 	delete_item();
@@ -145,7 +148,30 @@ void Game::make_enemy() {
 	}
 }
 
+void Game::make_item() {
 
+	for (auto& i : emerge_item) {
+
+		//まだ登場していない
+		if (i.get_done() == false) {
+
+			double time = i.get_stage_time();
+
+			//時間
+			if (stage_time >= time) {
+
+				String name = i.get_name();
+				int x = i.get_x();
+				int y = i.get_y();
+
+				item.push_back(Item(name, x, y));
+
+				i.set_done();
+			}
+		}
+
+	}
+}
 
 
 void Game::update_enemy_bullet(double _d_time) {
@@ -315,11 +341,11 @@ void Game::update_item(double _d_time) {
 	}
 }
 
-void Game::player_vs_item() {
+void Game::player_netvs_item() {
 
 	item.remove_if([&](Item i) {
 
-		if (player.get_rect().intersects(i.get_rect())) {
+		if (player.get_net_hit_rect().intersects(i.get_rect())) {
 
 			String name = i.get_name();
 
@@ -360,5 +386,6 @@ void Game::update_back_object(double _d_time) {
 		}
 	}
 }
+
 
 

@@ -210,4 +210,16 @@ void Game::draw_UI() {
 
 
 	FontAsset(U"KIKA_R_30")(score_string).draw(score_x, 55);
+
+
+
+	//Remain
+
+	int remain_x = 1100;
+
+	TextureAsset(U"player").scaled(0.75).draw(remain_x, 30);
+
+	FontAsset(U"KIKA_R_30")(U"×" + Format(remain)).draw(remain_x + 100, 40);
+
+
 }

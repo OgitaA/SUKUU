@@ -5,11 +5,13 @@ Player::Player() {
 	rect = Rect(1920 / 2, 1080 / 2, 130, 75);
 
 	reset();
+
+	
 }
 
 void Player::reset() {
 
-	
+
 	mode = U"burn";
 	muteki_count = 0;
 	shot_cool_time = 0;
@@ -17,6 +19,9 @@ void Player::reset() {
 	burn_gauge = 2;
 	non_burn_gauge = 3;
 	recycle_gauge = 4;
+
+	net.reset();
+	net.first(rect.x, rect.y);
 }
 
 void Player::update(double _d_time) {
@@ -28,17 +33,28 @@ void Player::update(double _d_time) {
 		muteki_count -= d_time;
 	}
 
-	move();
-
-
 	if (shot_cool_time > 0) {
 
 		shot_cool_time -= d_time;
 	}
 
+
+
+	move();
+
+
+
+	//すくう
+	net.update(d_time,rect.x,rect.y);
+
+
+	
+
 }
 
 void Player::draw() {
+
+	net.draw();
 
 	TextureAsset(U"player").draw(rect.x, rect.y);
 }
@@ -84,6 +100,7 @@ void Player::move() {
 	}
 
 	limit_screen();
+
 }
 
 void Player::limit_screen() {
@@ -104,6 +121,8 @@ void Player::limit_screen() {
 		rect.y = 1080 - 45 - rect.h;
 	}
 }
+
+
 
 void Player::damage() {
 

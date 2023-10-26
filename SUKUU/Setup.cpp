@@ -84,6 +84,9 @@ void Game::load_image() {
 	TextureAsset::Register(U"player", U"image/battle/object/player/player.png");
 	TextureAsset::Load(U"player");
 
+	TextureAsset::Register(U"net", U"image/battle/object/player/net.png");
+	TextureAsset::Load(U"net");
+
 	//player_bullet
 	TextureAsset::Register(U"bullet", U"image/battle/object/player_bullet/normal.png");
 	TextureAsset::Load(U"bullet");

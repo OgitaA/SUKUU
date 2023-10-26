@@ -1,7 +1,10 @@
 ﻿#include"Item.hpp"
 
-Item::Item(String _name,double _x,double _y) {
+Item::Item(String _name,String _type,double _x,double _y) {
+
 	name = _name;
+
+	type = _type;
 
 	rect = Rect(_x, _y, 100, 100);
 

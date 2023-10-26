@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+#include"Net.hpp"
+
+
 class Player {
 
 public:
@@ -27,6 +30,13 @@ public:
 
 	bool get_miss() { return miss; }
 
+	Net net;
+
+	RectF get_net_hit_rect() { return net.get_hit_rect(); }
+
+
+	
+
 private:
 
 	double d_time;
@@ -46,6 +56,8 @@ private:
 	int burn_gauge = 0;
 	int non_burn_gauge = 0;
 	int recycle_gauge = 0;
+
+	
 
 
 };

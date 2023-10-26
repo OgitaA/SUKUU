@@ -4,7 +4,7 @@ class Item {
 
 public:
 
-	Item(String,double,double);
+	Item(String,String,double,double);
 
 	void update(double);
 	void draw();
@@ -19,6 +19,8 @@ private:
 	double d_time;
 
 	String name;
+
+	String type;
 
 	RectF rect;
 

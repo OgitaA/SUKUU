@@ -11,6 +11,7 @@
 #include"Back_Object.hpp"
 #include"Stage_Select_Box.hpp"
 #include"Emerge_Item.hpp"
+#include"Net.hpp"
 
 class Game {
 
@@ -66,6 +67,8 @@ public:
 	void update_battle();
 	void draw_battle();
 
+	void scoop();
+
 	Player player;
 	Array<Player_Bullet> player_bullet;
 	Array<Emerge_Enemy> emerge_enemy;
@@ -108,11 +111,12 @@ public:
 	void player_vs_enemy();
 
 	//Item
+	void make_item();
 	void update_item(double);
 	void draw_item();
 	void make_item(int,int,int);
 
-	void player_vs_item();
+	void player_netvs_item();
 
 	void delete_item();
 

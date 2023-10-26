@@ -208,6 +208,9 @@
     <Filter Include="Source Files\Game\Battle\Object\Emerge_Item">
       <UniqueIdentifier>{c2964165-003d-4da0-b3ad-0b305e69f33a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game\Battle\Object\Player\Net">
+      <UniqueIdentifier>{6ae70445-02d6-42dd-b7bc-9d9b8f0daa76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -293,6 +296,9 @@
     </ClCompile>
     <ClCompile Include="Common.cpp">
       <Filter>Source Files\Game\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Net.cpp">
+      <Filter>Source Files\Game\Battle\Object\Player\Net</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -961,6 +967,9 @@
     </ClInclude>
     <ClInclude Include="Emerge_Item.hpp">
       <Filter>Source Files\Game\Battle\Object\Emerge_Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Net.hpp">
+      <Filter>Source Files\Game\Battle\Object\Player\Net</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

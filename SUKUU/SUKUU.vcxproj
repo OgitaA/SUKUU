@@ -132,6 +132,7 @@
     <ClCompile Include="Make_Player_Shot.cpp" />
     <ClCompile Include="Make_Stage.cpp" />
     <ClCompile Include="Music.cpp" />
+    <ClCompile Include="Net.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player_Bullet.cpp" />
     <ClCompile Include="Setting.cpp" />
@@ -350,6 +351,7 @@
     <ClInclude Include="Enemy_Bullet.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Item.hpp" />
+    <ClInclude Include="Net.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Player_Bullet.hpp" />
     <ClInclude Include="Stage_Select_Box.hpp" />
